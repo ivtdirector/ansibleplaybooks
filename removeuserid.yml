@@ -1,0 +1,22 @@
+---
+ - name: Remove users
+   #hosts: csisvr1
+   #hosts: crmtest
+   become: yes
+   become_method: sudo
+   #become_user: root
+   tasks:
+     - name: Remove Users
+       user:
+         name: '{{ item }}'
+         state: absent
+         remove: yes
+
+       loop:
+         - hanpor
+         - daiyang
+         - malei
+         - rachel
+         - kaiyan
+         - yvonne
+         - zhouqi
